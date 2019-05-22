@@ -7,9 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="javawebV001" />
-        <module name="javawebV002" />
+        <module name="javaweb_admin" />
+        <module name="javaweb_mls" />
+        <module name="javaweb_model" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="javawebmodel" target="1.5" />
+      <module name="javawebV001" target="1.7" />
+      <module name="teachjm" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

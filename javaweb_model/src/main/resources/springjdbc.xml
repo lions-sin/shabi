@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!-- 扫描包路径  扫描所有的 数据层注解 -->
+    <context:component-scan base-package="com.lk.javaweb.dao"/>
+
+    <!--  数据源： 共享的配置 c3po  dbcp  duild -->
+    <context:property-placeholder location="classpath:mysql.properties" />
+
+<!--  c3po   dbcop2   druid  三种全写-->
+    <bean id="dataSource-dbcp2" class="org.apache.commons.dbcp2.BasicDataSource">
+
+        <property name="driverClassName" value="${driver}" />
+        <property name="url" value="${url}"/>
+        <property name="username" value="${name}" />
+        <property name="password" value="${pwd}" />
+
+        <!-- 连接池启动时的初始值 -->
+        <property name="initialSize" value="1"/>
+        <!-- 连接池的最大值 -->
+        <property name="maxTotal" value="500"/>
+        <!-- 最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止 -->
+        <property name="maxIdle" value="2"/>
+        <!--  最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请一些连接，以避免洪峰来时再申请而造成的性能开销 -->
+        <property name="minIdle" value="1"/>
+
+    </bean>
+
+
+    <!-- 事务的使用 -->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource-dbcp2"/>
+    </bean>
+    <!-- 模板类注入连接 jdbc=  new  JdbcTemplate()-->
+    <bean  id="jdbc" class="org.springframework.jdbc.core.JdbcTemplate" >
+        <constructor-arg ref="dataSource-dbcp2"></constructor-arg>
+
+    </bean>
+
+    <!-- 织入事务 -->
+    <tx:annotation-driven transaction-manager="txManager"/>
+</beans>
