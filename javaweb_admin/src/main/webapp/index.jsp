@@ -12,7 +12,6 @@
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <base href="<%=basePath%>">
-<!doctype html>
 <html>
 
 <head>

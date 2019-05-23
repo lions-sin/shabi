@@ -1,4 +1,4 @@
-package com.lk.javaweb.web;
+package com.lk.javaweb.web.admin;
 
 import com.lk.javaweb.dao.FoodStyleDao;
 import com.lk.javaweb.dao.Impl.FoodStyleDaoImpl;
@@ -12,21 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "FoodStyleServlet", urlPatterns = "/fs")
+@WebServlet(name = "foodStyleServlet", urlPatterns = "/adminfs")
 public class FoodStyleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String todo = request.getParameter("todo");
         FoodStyleDao dao = new FoodStyleDaoImpl();
 
-        if(todo!=null){
-            //加载产品类
-            if(todo.equals("initFs")){
-                List<FoodStyle> foodStyleList = dao.select();
+        if(todo.equals("selectAll")){
 
-                //单次请求域中的内容
-                request.setAttribute("foodStyleList",foodStyleList);
-            }
+            List<FoodStyle> foodStyleList = dao.select();
+
+            request.setAttribute("foodStyleList",foodStyleList);
+
+            request.getRequestDispatcher("foodstyle.jsp").forward(request,response);
         }
 
     }

@@ -24,36 +24,20 @@
             <li class="tpl-left-nav-item">
                 <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-table"></i>
-                    <span>表格</span>
+                    <span>产品分类</span>
                     <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
                 </a>
                 <ul class="tpl-left-nav-sub-menu">
                     <li>
-                        <a href="table-font-list.html">
+                        <a href="adminfs?todo=selectAll">
                             <i class="am-icon-angle-right"></i>
-                            <span>文字表格</span>
+                            <span>查询产品分类</span>
                             <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                        </a>
-
-                        <a href="table-images-list.html">
-                            <i class="am-icon-angle-right"></i>
-                            <span>图片表格</span>
-                            <i class="tpl-left-nav-content tpl-badge-success">
-                                18
-                            </i>
-                        </a>
-                        <a href="form-news.html">
-                            <i class="am-icon-angle-right"></i>
-                            <span>消息列表</span>
-                            <i class="tpl-left-nav-content tpl-badge-primary">
-                                5
-                            </i>
                         </a>
 
                         <a href="form-news-list.html">
                             <i class="am-icon-angle-right"></i>
-                            <span>文字列表</span>
-
+                            <span>发布产品分类</span>
                         </a>
                     </li>
                 </ul>
@@ -82,7 +66,7 @@
             </li>
 
             <li class="tpl-left-nav-item">
-                <a href="login.html" class="nav-link tpl-left-nav-link-list">
+                <a href="login.jsp" class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-key"></i>
                     <span>登录</span>
 
