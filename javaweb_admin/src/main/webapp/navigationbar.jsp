@@ -45,6 +45,28 @@
 
             <li class="tpl-left-nav-item">
                 <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+                    <i class="am-icon-table"></i>
+                    <span>产品信息</span>
+                    <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+                </a>
+                <ul class="tpl-left-nav-sub-menu">
+                    <li>
+                        <a href="food_admin?todo=selectByPage">
+                            <i class="am-icon-angle-right"></i>
+                            <span>产品图片</span>
+                            <i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+                        </a>
+
+                        <a href="form-news-list.html">
+                            <i class="am-icon-angle-right"></i>
+                            <span>发布新品</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="tpl-left-nav-item">
+                <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
                     <i class="am-icon-wpforms"></i>
                     <span>表单</span>
                     <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
